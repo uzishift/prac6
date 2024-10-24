@@ -55,7 +55,7 @@ namespace prac6
         /// <param name="e"></param>
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Разработчик: Демьяхин Роман ИСП-31 12 Вариант\nСоздать класс Triad (тройка чисел). Создать необходимые методы и свойства.\r\nОпределить методы с операциями сложения с числом, умножения на число, проверки на равенство.\nСоздать перегруженный метод для сложения элементов одной триады с другой триадой.", "О программе");
+            MessageBox.Show("Разработчик: Демьяхин Роман ИСП-31 12 Вариант\nИспользовать класс Triad (тройка чисел). Разработать операцию для сложения триады с числом.\nРазработать операцию для сложения элементов одой триады с другой триадой.", "О программе");
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace prac6
         {
             if (UpdateTriads())
             {
-                _triad1 += _triad2;
+                _triad1 = _triad1 + _triad2;
                 tbOutput.Text = $"{_triad1}";
             }
             UpdateTextBoxesForTriad1();
@@ -115,8 +115,8 @@ namespace prac6
         {
             if (UpdateTriad1() && int.TryParse(tbNumber.Text, out int number))
             {
-                _triad1 += number;
-                tbOutput.Text = $"{_triad1}";
+                _triad1 = _triad1 + number;
+                tbOutput.Text = $"Сложение Триады 1 с числом {number}:\n{_triad1}";
                 UpdateTextBoxesForTriad1();
             }
             else

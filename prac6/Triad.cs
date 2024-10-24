@@ -58,10 +58,7 @@ namespace prac6
         /// <returns></returns>
         public static Triad operator +(Triad triad, int number)
         {
-            triad.First += number;
-            triad.Second += number;
-            triad.Third += number;
-            return triad;
+            return new Triad(triad.First + number, triad.Second + number, triad.Third + number);
         }
 
         /// <summary>
@@ -97,10 +94,7 @@ namespace prac6
         /// <returns></returns>
         public static Triad operator +(Triad triad1, Triad triad2)
         {
-            triad1.First += triad2.First;
-            triad1.Second += triad2.Second;
-            triad1.Third += triad2.Third;
-            return triad1;
+            return new Triad(triad1.First + triad2.First, triad1.Second + triad2.Second, triad1.Third + triad2.Third);
         }
 
         /// <summary>
